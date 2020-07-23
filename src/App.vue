@@ -12,17 +12,17 @@
   export default {
     computed: {
       layout() {
-        console.log(this.$route.meta.layout)
-        return 'empty-layout'
+        return (this.$route.meta.layout || 'empty') + '-layout'
       }
     },
     components: {
-      Auth, MainLayout
+      EmptyLayout: Auth,
+      MainLayout,
     }
   }
 </script>
 
-<style lang="scss">
+<style>
   @import "~materialize-css/dist/css/materialize.min.css";
   @import "assets/index.css";
 </style>
